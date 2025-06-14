@@ -1,44 +1,31 @@
-# Reddit Community Engagement Analysis - Dependencies
-# Compatible with Google Colab and local environments
+# Project Requirements and Setup Guide
 
-# Core data analysis
-pandas==2.0.3
-numpy==1.24.3
+## 🐍 Python Version
+- Python 3.8 or higher
+- Compatible with Google Colab (Python 3.10 as of 2024)
 
-# API and web requests
-requests==2.31.0
+## 📦 Required Packages
 
-# Visualization
-matplotlib==3.7.2
-seaborn==0.12.2
+### Core Dependencies
+```bash
+pandas==2.0.3          # Data manipulation and analysis
+numpy==1.24.3          # Numerical computing
+requests==2.31.0       # HTTP requests for Reddit API
+matplotlib==3.7.2      # Data visualization
+seaborn==0.12.2        # Statistical data visualization
+python-dotenv==1.0.0   # Environment variable management
+tqdm==4.66.1          # Progress bars for data collection
+```
 
-# Environment management
-python-dotenv==1.0.0
+### Built-in Dependencies (No installation required)
+- `sqlite3` - Database management
+- `json` - JSON data handling
+- `os` - Operating system interface
+- `time` - Time-related functions
+- `getpass` - Secure password input
 
-# Progress tracking
-tqdm==4.66.1  # Progress bars for data collection
+## 🚀 Installation Instructions
 
-# ========== GOOGLE COLAB NOTES ==========
-# Most packages above are pre-installed in Colab
-# To install missing packages in Colab, run:
-# !pip install python-dotenv tqdm
-
-# For Colab users:
-# 1. Upload notebooks to Google Drive
-# 2. Open with Google Colaboratory
-# 3. Mount drive using:
-#    from google.colab import drive
-#    drive.mount('/content/drive')
-# 4. Use getpass for secure credential entry:
-#    from getpass import getpass
-#    client_id = getpass('Enter Reddit Client ID: ')
-
-# ========== LOCAL INSTALLATION ==========
-# For local development, install all with:
-# pip install -r requirements.txt
-
-# Optional for local Jupyter development:
-# jupyter==1.0.0
-# notebook==7.0.0
-
-# Note: SQLite3 is built into Python (no installation needed)
+### Option 1: Google Colab (Recommended)
+```python
+# Most packages are pre-installed in Colab
