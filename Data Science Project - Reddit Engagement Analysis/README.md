@@ -55,6 +55,7 @@ The analysis reveals that r/technology significantly outperforms r/science and r
 - **Python Community** for powerful data analysis libraries (pandas, matplotlib, seaborn)
 - **Stack Overflow** for troubleshooting support during development
 - **Claude AI** for code assistance and debugging support throughout the project
+- **OpenAI's ChatGPT** for code assiatance, debugging and report formulation
 
 ## References
 
