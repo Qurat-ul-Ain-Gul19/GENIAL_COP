@@ -1,4 +1,5 @@
-Summary of the Project
+Summary of the Project:
+
 I have to conduct a mini data science investigation using data from 3–5 Reddit subreddits accessed through the Reddit API. The goal is to ask an insightful question that can be answered through structured metadata (not full text analysis). 
 
 I'll:
