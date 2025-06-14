@@ -1,179 +1,44 @@
-Overview
-Unlike ✍️ Mini-Project I, here you have the freedom to investigate aspects of Reddit communities that interest you. You are in charge of asking an overall question this time. It must be a question that can be answered using the data available from the Reddit API, and your project must adhere to the requirements listed in the sections below.
+# Reddit Community Engagement Analysis - Dependencies
+# Compatible with Google Colab and local environments
 
-Some potential areas to explore:
+# Core data analysis
+pandas==2.0.3
+numpy==1.24.3
 
-Reddit forums are moderated (by actual humans). Is there a measurable impact that seems likely attributed to the effect of different moderation rules under subreddits of a similar topic?
-How do different topics get portrayed differently in “rival” subreddits?
-💡 Tip: Your analysis should rely, as much as possible, on quantifiable metrics (upvotes, comments, awards, etc.) that can be analysed through tabular data. We will not teach a whole bunch of text analysis in this course.
+# API and web requests
+requests==2.31.0
 
-📚 Preparation
-You must click on a GitHub Classroom link 1 to create your designated repository. Do not create a separate repository.
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
 
-Clone the repository to Nuvolos (or your local machine, if you prefer) and create the necessary folders and files according to the rest of the instructions.
+# Environment management
+python-dotenv==1.0.0
 
-Create a developer account on Reddit to access their API.
+# Progress tracking
+tqdm==4.66.1  # Progress bars for data collection
 
-📤 Submission
-📅 Due Date: Wednesday 26 March 2025, 8pm UK time
+# ========== GOOGLE COLAB NOTES ==========
+# Most packages above are pre-installed in Colab
+# To install missing packages in Colab, run:
+# !pip install python-dotenv tqdm
 
-📤 Submission Method: Push your work to your allocated GitHub repository. DO NOT submit via Moodle.
+# For Colab users:
+# 1. Upload notebooks to Google Drive
+# 2. Open with Google Colaboratory
+# 3. Mount drive using:
+#    from google.colab import drive
+#    drive.mount('/content/drive')
+# 4. Use getpass for secure credential entry:
+#    from getpass import getpass
+#    client_id = getpass('Enter Reddit Client ID: ')
 
-🤖 AI Usage: You are allowed to use AI tools for whatever you want in this assignment. You will not lose any marks for copy-pasting code from AI, but you might lose marks if your coding choices deviate from the course material without proper justification.
+# ========== LOCAL INSTALLATION ==========
+# For local development, install all with:
+# pip install -r requirements.txt
 
-Remember that over-reliance on AI may result in code you do not understand or that introduces unnecessary complexity. We recommend using AI as a learning aid rather than a substitute for your own code development.
+# Optional for local Jupyter development:
+# jupyter==1.0.0
+# notebook==7.0.0
 
-If you submit after this date without an authorised extension, you will receive a late submission penalty.
-
-Need an Extension?
-
-If you have extenuating circumstances that require an extension:
-
-Email 📧 DSI.ug with details of your situation
-Include the extensions form
-Submit your request before the cut-off time. You will typically receive an answer within 24 hours.
-⚠️ Note: Extensions are granted only for valid extenuating circumstances, not for technical difficulties with Git, Nuvolos, or time management issues. Start early and use our support resources (Slack, drop-in sessions, office hours) if you need help.
-
-🤔 Key Decisions
-As you design your project, you will need to make several key decisions:
-
-Subreddit Selection
-
-Choose 3-5 subreddits that align with your research interests
-The subreddits should be thematically related
-Justify your selections based on your research question
-Data Collection Strategy
-
-Determine your time window (how far back you will collect posts)
-Decide how many posts to collect from each subreddit
-Consider what metadata will be most relevant to your question
-Analysis Strategy
-
-Define which aspects of Reddit engagement you will analyse
-Select a couple of metrics to measure (e.g., upvotes, comments, awards, post timing)
-Explain how these metrics relate to your research question
-📋 Requirements
-Here are the things your project must have.
-
-📂 Repository Structure
-Adhere to the following repository structure:
-
-<github-repo-folder>/
-├── data/
-│   └── database.db      # Only one .db file required
-├── figures/            # Can have subfolders
-├── notebooks/
-│   ├── NB01 - Data Gathering.ipynb
-│   └── NB02 - Exploratory Data Analysis.ipynb
-├── README.md           # Brief setup instructions
-├── REPORT.md           # Your main findings (max 1000 words)
-├── .gitignore
-└── requirements.txt
-📝 Analysis Components
-Component	Requirements
-NB01 - Data Gathering.ipynb	☑️ Use requests library with proper authentication for Reddit API
-☑️ Collect data from 3-5 subreddits
-☑️ Keep authentication keys hidden from GitHub
-☑️ Transform JSON data using pandas normalisation techniques
-☑️ Split data into three data frames
-☑️ Dump dataframes in the SQLite database, with the three tables mapped with the proper relationships
-NB02 - Exploratory Data Analysis.ipynb	☑️ Query database with pd.read_sql()
-☑️ Apply appropriate data reshaping techniques
-☑️ Show exploratory data analysis process
-☑️ Create visualisations that address your research question
-README.md	☑️ Brief project overview and setup instructions
-☑️ Acknowledgements and references
-REPORT.md
-(max 1000 words)	☑️ Concise summary of research question and approach
-☑️ Present exactly TWO carefully crafted insights (visualisations or tables)
-☑️ Use meaningful titles that convey key messages
-☑️ Include interpretation that highlights significance
-☑️ Discuss limitations and future research directions
-💡 Note: Only the two visualisations in REPORT.md (which must be visible on GitHub) will be formally assessed for the visualisation criterion.
-
-💽 Database Requirements
-For this project, you’ll implement a relational SQLite database with three core tables.
-
-PRO-TIP: If you start the project early (Week 08), create 3x pandas DataFrames instead, so you can play around with the data before you learn about databases.
-
-Your database must be named database.db and must be located in the data/ folder.
-
-Your database must include these three tables with the specified structure:
-
-SUBREDDITS
-string
-subreddit_id
-PK
-string
-name
-int
-subscribers
-int
-created_utc
-string
-description
-POSTS
-string
-post_id
-PK
-string
-subreddit_id
-FK
-string
-title
-string
-author
-int
-created_utc
-int
-score
-float
-upvote_ratio
-int
-num_comments
-COMMENTS
-string
-comment_id
-PK
-string
-post_id
-FK
-string
-author
-int
-created_utc
-int
-score
-string
-body
-contains
-has
-💡 Note: This simplified schema provides the foundation for your database. You may add additional fields or change the tables if that suits your research question best. The key thing is to have a well-designed database that supports your analysis.
-
-You can either use SQL queries or read the tables directly into DataFrames and do the operations in pandas later.
-
-Coding Standards
-Here’s a non-exhaustive list of coding practices we adopt in this course. If you end up using a package/technique/algorithm that is not listed here nor was ever mentioned in the lectures or classes, you must add a justification for why you couldn’t have done that without the techniques we exposed you to.
-
-Click here to expand
-✔️ Marking Guide
-What We Value
-DS105 assignments are designed to build you experience with the data science pipeline. As such, we care more about the process that lead to a great final product than just looking at the final product alone.
-
-While AI tools like ChatGPT can generate code that passes superficial requirements, they often miss the deeper principles we teach in this course. When marking, we’ll be looking for evidence that you understand the why behind your code choices, not just that you’ve completed all checkboxes.
-
-Your assignment should demonstrate that you’ve developed:
-
-Critical thinking about data structure and transformation
-Deliberate choices in database design and query strategy
-Thoughtful visualization decisions that reveal meaningful patterns
-You can still use AI any time for anything if you want. As long as you are in control of your own mind, it’s all good!
-
-Very Detailed Marking Criteria
-Taking that into account, we will be looking for evidence of real learning across 4 different areas:
-
-Criterion	Weight	What We’re Looking For
-Clear Intent	20%	Do we see evidence of reflection on your coding choices? Is it apparent, via your documentation, that you considered options and selected the most suitable one? Have you followed the coding style from our demonstrations, or does it seem like you were merely checking boxes and copy-pasting without much thought?
-Clarity of Communication	10%	Did you clearly communicate your intentions (methodology, design choices, results interpretation)? Is your text simple to understand, or must we read it multiple times? Is your Markdown well-structured? Is your code self-explanatory, with meaningful variable and function names, requiring comments only for complex operations?
-Data Transformation Mastery	40%	Have you applied the data manipulation principles from the course? Did you use pandas to reshape, filter, and aggregate your data? Is your database schema correctly designed with proper relationships? Did you effectively use SQL and/or pandas operations as much as possible instead of manual loops? We seek evidence of your ability to transform semi-structured API data (JSON) into a tidy database that supports your analysis.
-Effective Visualisations	30%	Your two chosen visualisations in REPORT.md must narrate your data’s story, not merely describe it. Are these visualisations suitable for the data and your research question? Do your aesthetic choices (geoms, colours, font sizes, text orientation, etc.) enhance the narrative, or do they confuse the reader?
+# Note: SQLite3 is built into Python (no installation needed)
