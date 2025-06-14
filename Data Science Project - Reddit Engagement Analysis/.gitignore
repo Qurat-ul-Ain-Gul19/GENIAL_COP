@@ -1,1 +1,31 @@
+# Project Requirements and Setup Guide
 
+## 🐍 Python Version
+- Python 3.8 or higher
+- Compatible with Google Colab (Python 3.10 as of 2024)
+
+## 📦 Required Packages
+
+### Core Dependencies
+```bash
+pandas==2.0.3          # Data manipulation and analysis
+numpy==1.24.3          # Numerical computing
+requests==2.31.0       # HTTP requests for Reddit API
+matplotlib==3.7.2      # Data visualization
+seaborn==0.12.2        # Statistical data visualization
+python-dotenv==1.0.0   # Environment variable management
+tqdm==4.66.1          # Progress bars for data collection
+```
+
+### Built-in Dependencies (No installation required)
+- `sqlite3` - Database management
+- `json` - JSON data handling
+- `os` - Operating system interface
+- `time` - Time-related functions
+- `getpass` - Secure password input
+
+## 🚀 Installation Instructions
+
+### Option 1: Google Colab (Recommended)
+```python
+# Most packages are pre-installed in Colab
