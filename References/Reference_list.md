@@ -22,3 +22,4 @@
 * [Udemy ChatGPT courses](https://www.udemy.com/topic/chatgpt)
 * [Open AI Teaching with AI](https://openai.com/index/teaching-with-ai/)
 * [Teaching with ChatGPT](https://teachingwithchatgpt.org.uk/home)
+* [Generative AI in Online Education] (https://sites.google.com/2u.com/2u-educator-enrichment/on-demand-resources/resource-collection/generative-ai-in-online-education)
