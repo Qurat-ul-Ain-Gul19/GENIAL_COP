@@ -21,3 +21,4 @@
 * [Generative AI in Online Education](https://sites.google.com/2u.com/2u-educator-enrichment/on-demand-resources/resource-collection/generative-ai-in-online-education)
 * [Teaching Responsible Use of AI](https://services.google.com/fh/files/misc/google_teaching_responsible_ai.pdf)
 * [Generative AI for Educators](https://skillshop.exceedlms.com/student/path/1176018?utm_source=google&utm_medium=institutions&utm_campaign=sou--direct__med--none-direct__cam--gwgsite__con--null__ter--null&gwg_campaign_id=null&gwg_exp=null)
+* [Gemini & ISTE 2025: Educator Resources](https://blog.google/outreach-initiatives/education/gemini-iste-2025/)
